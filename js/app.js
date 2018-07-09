@@ -9,7 +9,7 @@ function sortByPriceAscending(input) {
   while (i > 0) {
     csere = 0;
     for (var j = 0; j < i; j++) {
-      if (input[j].cost_in_credits > input[j + 1].cost_in_credits) {
+      if (parseInt(input[j].cost_in_credits) > parseInt(input[j + 1].cost_in_credits)) {
         [input[j], input[j + 1]] = [input[j + 1], input[j]];
         csere = j;
       }
@@ -17,9 +17,25 @@ function sortByPriceAscending(input) {
     i = csere;
   }
 }
+//nem teszteltem, de a facebook csoportban talált kód alapján így kéne kinéznie
 
 //2. Töröld az összes olyan adatot (tehát az objektumot a tömbből) ahol a consumables értéke NULL.
-//Fontos, hogy ne csak undefined-ra állítsd a tömbelemet!!!
+
+function delNullConsumables(input) {
+  for (var i = 0; i < input.length; i++) {
+    if (input[i].consumables === null) {
+      input.splice(i, 1)
+    }
+  }
+}
+// Array.splice(x,1); --remove element at position x
+//input tömb tetszőleges indexű elemének eltávolítására ezt a megoldást találtam
+
+//3. Az összes NULL értéket (minden objektum minden tulajdonságánál) módosítsd "unknown"-ra
+
+//4. Írasd ki így kapott hajók adatait.
+
+
 
 
 
