@@ -33,7 +33,27 @@ function delNullConsumables(input) {
 
 //3. Az összes NULL értéket (minden objektum minden tulajdonságánál) módosítsd "unknown"-ra
 
+function replaceNullValuesToUnknown(input) {
+  for (var i = 0; i < input.length; i++) {
+    for (var j in input[i]) {
+      if (input[i].hasOwnProperty(k)) {
+        if (input[i][j] === null) {
+          input[i][j] = 'unknown';
+        }
+      }
+    }
+  }
+}
+
+//https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value
+//162. válasz!!!
+
+
 //4. Írasd ki így kapott hajók adatait.
+
+function displayDataOfSortedShips(input) {
+
+}
 
 
 
