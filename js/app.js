@@ -51,12 +51,6 @@ function replaceNullValuesToUnknown(input) {
 
 //4. Írasd ki így kapott hajók adatait.
 
-function displayDataOfSortedShips(input) {
-
-}
-
-
-
 
 
 function getData(url, callbackFunc) {
@@ -75,5 +69,7 @@ function successAjax(xhttp) {
   var userDatas = JSON.parse(xhttp.responseText);
   // Innen lehet hívni.
   sortByPriceAscending(userDatas);
+  delNullConsumables(userDatas);
+  replaceNullValuesToUnknown(userDatas);
 }
 getData('/json/spaceships.json', successAjax);
